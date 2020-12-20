@@ -63,7 +63,7 @@ public:
         cout << "Kcal:" << getKcal() << endl;
         cout << "=======================================\n";
     }
-
+    virtual  ~Ingredient() = 0;
 
 
 };
@@ -196,10 +196,9 @@ public:
         delete[]ingredients;
         ingredients = items;
         items = nullptr;
-        /*duzgun elave edilir mi*/
+
     }
-    friend ostream& operator<<(ostream& out, const Dish& dish);
-    friend istream& operator>>(istream& in, Dish& dish);
+    virtual ~Dish() = 0;
 };
 
 class Pizza :public Dish {
